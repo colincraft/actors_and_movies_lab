@@ -40,6 +40,19 @@ class ActorsController < ApplicationController
     actor.destroy
     redirect_to actors_path
   end
+
+def add_movie
+  movie = Movie.find(params[:movie_id])
+  actor = Actor.find(params[:id])
+  movie.actors << actor
+  redirect_to movie_path(movie)
+end
+def remove_movie
+  movie = Movie.find(params[:movie_id])
+  actor = Actor.find(params[:id])
+  movie.actors.delete(actor)
+  redirect_to movie_path(movie)
+end
   
   private
   def actor_params

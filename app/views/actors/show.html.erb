@@ -1,5 +1,23 @@
 <h1><%= @actor.name %></h1>
 <%= link_to "Edit this actor", edit_actor_path(@actor) %>
-<p><% @movies.each do |movie| %></p>
-<%= movie.title %>
-<% end %>
+
+
+<div>
+  <h2>Movies</h2>
+  <ul>
+    <% @actor.movies.each do |role| %>
+    <li>
+      <%= link_to "#{role.title} (#{role.year})", movie_path(role) %>
+      <%= button_to "X", remove_actor_path(@actor, role), :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
+  <%= form_tag add_movie_path do |f|%>
+    <select name="movie_id">
+      <% @movies.each do |flick| %>
+      <option value="<%=flick.id%>"><%=flick.title %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Add">
+  <% end %>
+</div>
