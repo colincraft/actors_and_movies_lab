@@ -1,0 +1,12 @@
+<h1>Edit <%= "#{@actor.name}" %></h1>
+<%= form_for @actor do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>
+<p>
+<%= link_to "Delete this writer actor?", actor_path, method:"Delete", data:{ confirm: "Are you sure you want to delete #{@actor.name}?"} %>
+</p>
+<p>
+<%= link_to "Home", actors_path %>
+</p>

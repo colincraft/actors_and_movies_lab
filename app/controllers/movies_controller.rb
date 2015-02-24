@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    # @actor = ActorMovie.find params[:movie_id]
   end
 
   def update

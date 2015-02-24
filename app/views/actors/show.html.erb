@@ -1,0 +1,5 @@
+<h1><%= @actor.name %></h1>
+<%= link_to "Edit this actor", edit_actor_path(@actor) %>
+<p><% @movies.each do |movie| %></p>
+<%= movie.title %>
+<% end %>
