@@ -2,16 +2,26 @@
 
 <p><%= @movie.year %></p>
 
+<<<<<<< HEAD
 <div>
   <h2>Movies</h2>
   <ul>
     <% @movie.actors.each do |actor| %>
     <li>
       <%= link_to "#{actor.name}", actor %>
+=======
+<div class="black-box">
+  <h2>Actors</h2>
+  <ul>
+    <% @movie.actors.each do |actor| %>
+    <li>
+      <%= link_to actor.name, actor %>
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05
       <%= button_to "X", remove_actor_path(@movie, actor), :method => :delete %>
     </li>
     <% end %>
   </ul>
+<<<<<<< HEAD
   <%= form_tag add_actor_path(@movie) do |f|%>
     <select name="actor_id">
       <% @actor.each do |actor| %>
@@ -19,6 +29,13 @@
       <% end %>
     </select>
     <input type="submit" value="Add">
+=======
+  <% unless @actors.empty? %>
+    <%= form_tag add_actor_path(@movie) do %>
+      <%= collection_select :actor, :id, @actors, :id, :name %>
+      <%= submit_tag "Add" %>
+    <% end %>
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05
   <% end %>
 </div>
 

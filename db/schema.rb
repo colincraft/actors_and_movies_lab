@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150224154519) do
+=======
+ActiveRecord::Schema.define(version: 20150223001249) do
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "actor_movies", force: true do |t|
     t.integer  "actor_id"
     t.integer  "movie_id"
@@ -23,6 +28,8 @@ ActiveRecord::Schema.define(version: 20150224154519) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05
   create_table "actors", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
